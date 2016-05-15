@@ -1,18 +1,18 @@
 import sys
 from datetime import datetime
 
-# copied from http://nafiulis.me/making-a-static-blog-with-pelican.html
+# modified from http://nafiulis.me/making-a-static-blog-with-pelican.html
 
 TEMPLATE = """
-{title}
-{hashes}
+Title: {title}
 
-:date: {year}-{month}-{day} {hour}:{minute:02d}
-:tags:
-:category:
-:slug: {slug}
-:summary:
-:status: draft
+Date: {year}-{month}-{day} {hour}:{minute:02d}
+Tags:
+Category:
+Slug: {slug}
+Summary
+Status: draft
+Authors: Keith Kelly
 
 
 """
@@ -24,7 +24,6 @@ def make_entry(title):
     f_create = "content/blog/{}_{:0>2}_{:0>2}_{}.rst".format(
         today.year, today.month, today.day, slug)
     t = TEMPLATE.strip().format(title=title,
-                                hashes='#' * len(title),
                                 year=today.year,
                                 month=today.month,
                                 day=today.day,
