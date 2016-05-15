@@ -7,6 +7,7 @@ First Post
 :slug: first-post
 :summary: First post on new personal blog
 :status: published
+:authors: Keith Kelly
 
 Hello everyone.
 I've just registered a new domain, ``kwkelly.com``, and this is my first post on the new blog that I'm setting up on that site.
