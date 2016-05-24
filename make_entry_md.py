@@ -10,7 +10,7 @@ Date: {year}-{month}-{day} {hour}:{minute:02d}
 Tags:
 Category:
 Slug: {slug}
-Summary
+Summary:
 Status: draft
 Authors: Keith Kelly
 
