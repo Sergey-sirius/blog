@@ -22,11 +22,13 @@ AUTHOR_FEED_RSS = None
 # Blogroll
 LINKS = (('Pelican', 'http://getpelican.com/'),
          ('Python.org', 'http://python.org/'),
+         ('Magnific Popup', 'http://dimsemenov.com/plugins/magnific-popup/'),
          ('Jinja2', 'http://jinja.pocoo.org/'))
 
 # Social widget
 SOCIAL = (('github', 'http://github.com/kwkelly'),
-        ('twitter', 'http://twitter.com/keithkelly'),)
+        ('twitter', 'http://twitter.com/keithkelly'),
+        ('linkedin', 'https://www.linkedin.com/in/keith-kelly-b705379'),)
 
 DEFAULT_PAGINATION = 10
 
