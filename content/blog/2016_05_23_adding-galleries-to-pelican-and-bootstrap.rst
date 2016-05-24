@@ -5,7 +5,6 @@ Adding galleries to pelican and bootstrap
 :tags: pelican, photos, meta
 :category:
 :slug: adding-galleries-to-pelican-and-bootstrap
-:summary: I had a few problems getting the photos plugin to play nice with pelican and with my pelican-bootstrap3 theme. This post explains what I went through to get everything working properly.
 :status: published
 :authors: Keith Kelly
 :gallery: {photo}woke

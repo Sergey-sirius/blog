@@ -5,7 +5,6 @@ First Post
 :tags: first, post
 :category:
 :slug: first-post
-:summary: First post on new personal blog
 :status: published
 :authors: Keith Kelly
 
