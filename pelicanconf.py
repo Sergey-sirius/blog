@@ -30,7 +30,7 @@ SOCIAL = (('github', 'http://github.com/kwkelly'),
 
 DEFAULT_PAGINATION = 10
 
-THEME = "./pelican-themes/pelican-bootstrap3/"
+THEME = "../pelican-themes/pelican-bootstrap3/"
 BOOTSTRAP_THEME = "flatly"
 
 
@@ -40,7 +40,8 @@ EXTRA_PATH_METADATA = {
         'extra/favicon.ico': {'path': 'favicon.ico'}
         }
 
-PLUGIN_PATHS = ['./pelican-plugins/']
+PLUGIN_PATHS = ['../pelican-plugins/']
+PLUGINS = ['photos']
 
 DISPLAY_CATEGORIES_ON_MENU = False
 DISPLAY_PAGES_ON_MENU = False
@@ -59,3 +60,7 @@ INDEX_SAVE_AS = '/blog/index.html'
 
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
+PHOTO_LIBRARY = "~/Pictures"
+PHOTO_GALLERY = (4096, 4096, 100)
+PHOTO_ARTICLE = (768, 768, 80)
+PHOTO_THUMB = (512, 512, 60)

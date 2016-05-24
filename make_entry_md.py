@@ -21,7 +21,7 @@ Authors: Keith Kelly
 def make_entry(title):
     today = datetime.today()
     slug = title.lower().strip().replace(' ', '-')
-    f_create = "content/blog/{}_{:0>2}_{:0>2}_{}.rst".format(
+    f_create = "content/blog/{}_{:0>2}_{:0>2}_{}.md".format(
         today.year, today.month, today.day, slug)
     t = TEMPLATE.strip().format(title=title,
                                 year=today.year,
