@@ -3,7 +3,7 @@
 from __future__ import unicode_literals
 
 AUTHOR = 'Keith Kelly'
-SITENAME = 'Keith Kelly'
+SITENAME = 'kwkelly'
 SITEURL = ''
 
 PATH = 'content'
@@ -43,7 +43,11 @@ EXTRA_PATH_METADATA = {
         }
 
 PLUGIN_PATHS = ['../pelican-plugins/']
-PLUGINS = ['photos']
+PLUGINS = ['photos', 'liquid_tags.img', 'liquid_tags.video',
+           'liquid_tags.youtube', 'liquid_tags.vimeo',
+           'liquid_tags.include_code', 'liquid_tags.notebook']
+NOTEBOOK_DIR = 'notebooks'
+#EXTRA_HEADER = open('_nb_header.html').read().decode('utf-8')
 
 DISPLAY_CATEGORIES_ON_MENU = False
 DISPLAY_PAGES_ON_MENU = False
