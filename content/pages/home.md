@@ -7,5 +7,5 @@ Author: Keith Kelly
 Summary: Home Page
 save_as: index.html
 
-**This is the home page for ``kwkelly.com``, the personal webpage of Keith Kelly.**
+**Welcome to ``kwkelly.com``, the personal webpage of Keith Kelly.**
 

@@ -36,7 +36,7 @@ THEME = "../pelican-themes/pelican-bootstrap3/"
 BOOTSTRAP_THEME = "flatly"
 
 
-STATIC_PATHS = ['images', 'extra/robots.txt', 'extra/favicon.ico', 'thumbs']
+STATIC_PATHS = ['images', 'extra/robots.txt', 'extra/favicon.ico', 'thumbs', 'extra/favicons']
 EXTRA_PATH_METADATA = {
         'extra/robots.txt': {'path': 'robots.txt'},
         'extra/favicon.ico': {'path': 'favicon.ico'}
@@ -67,6 +67,6 @@ INDEX_SAVE_AS = '/blog/index.html'
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
 PHOTO_LIBRARY = "~/Pictures"
-PHOTO_GALLERY = (4096, 4096, 100)
+PHOTO_GALLERY = (4096, 4096, 80)
 PHOTO_ARTICLE = (768, 768, 80)
 PHOTO_THUMB = (512, 512, 60)
