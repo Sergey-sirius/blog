@@ -52,7 +52,7 @@ NOTEBOOK_DIR = 'notebooks'
 DISPLAY_CATEGORIES_ON_MENU = False
 DISPLAY_PAGES_ON_MENU = False
 
-RELATIVE_URLS = False
+RELATIVE_URLS = True
 
 MENUITEMS = (('Blog', '/blog/'), ('About' ,'/about/'),)
 
