@@ -23,6 +23,8 @@ AUTHOR_FEED_RSS = None
 LINKS = (('Pelican', 'http://getpelican.com/'),
          ('Python.org', 'http://python.org/'),
          ('Magnific Popup', 'http://dimsemenov.com/plugins/magnific-popup/'),
+         ('Linode', 'https://www.linode.com/'),
+         ('CloudFlare', 'https://www.cloudflare.com/'),
          ('Jinja2', 'http://jinja.pocoo.org/'))
 
 # Social widget
@@ -36,10 +38,9 @@ THEME = "../pelican-themes/pelican-bootstrap3/"
 BOOTSTRAP_THEME = "flatly"
 
 
-STATIC_PATHS = ['images', 'extra/robots.txt', 'extra/favicon.ico', 'thumbs', 'extra/favicons']
+STATIC_PATHS = ['images', 'extra/robots.txt', 'thumbs', 'extra/favicons']
 EXTRA_PATH_METADATA = {
         'extra/robots.txt': {'path': 'robots.txt'},
-        'extra/favicon.ico': {'path': 'favicon.ico'}
         }
 
 PLUGIN_PATHS = ['../pelican-plugins/']
