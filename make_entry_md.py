@@ -5,7 +5,6 @@ from datetime import datetime
 
 TEMPLATE = """
 Title: {title}
-
 Date: {year}-{month}-{day} {hour}:{minute:02d}
 Tags:
 Category:

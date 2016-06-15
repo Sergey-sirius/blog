@@ -37,8 +37,8 @@ DEFAULT_PAGINATION = 10
 THEME = "../pelican-themes/pelican-bootstrap3/"
 BOOTSTRAP_THEME = "flatly"
 
-
-STATIC_PATHS = ['images', 'extra/robots.txt', 'thumbs', 'extra/favicons']
+READERS = {'html': None}
+STATIC_PATHS = ['images', 'extra/robots.txt', 'thumbs', 'extra/favicons', 'embed_html']
 EXTRA_PATH_METADATA = {
         'extra/robots.txt': {'path': 'robots.txt'},
         }
@@ -46,9 +46,9 @@ EXTRA_PATH_METADATA = {
 PLUGIN_PATHS = ['../pelican-plugins/']
 PLUGINS = ['photos', 'liquid_tags.img', 'liquid_tags.video',
            'liquid_tags.youtube', 'liquid_tags.vimeo',
-           'liquid_tags.include_code', 'liquid_tags.notebook']
+           'liquid_tags.include_code', 'liquid_tags.notebook', 'html_rst_directive']
 NOTEBOOK_DIR = 'notebooks'
-#EXTRA_HEADER = open('_nb_header.html').read().decode('utf-8')
+#EXTRA_HEADER = open('_nb_header.html').read()
 
 DISPLAY_CATEGORIES_ON_MENU = False
 DISPLAY_PAGES_ON_MENU = False
@@ -71,3 +71,4 @@ PHOTO_LIBRARY = "~/Pictures"
 PHOTO_GALLERY = (4096, 4096, 80)
 PHOTO_ARTICLE = (768, 768, 80)
 PHOTO_THUMB = (512, 512, 60)
+#HIDE_SIDEBAR=True
