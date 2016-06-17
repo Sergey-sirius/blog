@@ -27,15 +27,17 @@ Look again at that map from the previous post.
 </div>
 
 This sort of structure is known as a *[graph](https://en.wikipedia.org/wiki/Graph_%28discrete_mathematics%29)*
-The stations nodes (or vertices) and the links between them are edges.
+The stations are nodes (or vertices) and the links between them are edges.
 Graphs are very common in mathematics and computer science; they are used to represent [social networks](https://en.wikipedia.org/wiki/Social_network), [Markov chains](https://en.wikipedia.org/wiki/Markov_chain), [links on the internet](https://en.wikipedia.org/wiki/Webgraph), [map routes](https://en.wikipedia.org/wiki/Shortest_path_problem), and more.
 The graphs that I've used to display relative bikeshare station pair utilization are called *weighted undirected* graphs.
-Undirected implies that the graph does not distinguish between trips from New Hampshire Ave & T St NW to Massachusettes Ave & Dupont Cir NW and the reverse trip.
-Weighted means that there is a number, called a weight, associated to each edge whose meaning depends on context.
-In our case, edge weights indicate the number of trips from one station to another, on a map the weights could be distances between vertices.
-In a social network the edges may be unwighted with with each edge weight set to 1, indicating that two people are connected.
-In a Markov chain, the edge weights represent transition probabilities.
+Undirected implies that the graph does not distinguish between trip directions, so that trips from, for example, New Hampshire Ave & T St NW to Massachusettes Ave & Dupont Cir NW and the reverse trip are the same.
+Weighted means that there is a number, called (unsurprisingly) a weight, associated to each edge whose meaning depends on context.
+In our case edge weights indicate the number of trips from one station to another; on a map the weights could be distances between vertices.
+In a social network the edges may be *un*weighted with with each edge weight set to 1, indicating that two people are connected.
+In a Markov chain the edge weights represent transition probabilities.
 The actual data provided by Capital Bikeshare does yield a *directed* graph, i.e. one where the direction matters, but I did not have a convenient way of displaying that data on top of a map.
+
+In this blog post I am going to attempt to determine the nodes (stations) of the graph that are most important, or most central, to Capital Bikeshare.
 
 ## Example
 Here is an example of a simple graph which represents a two state Markov chain that I took from wikipedia:
@@ -61,13 +63,20 @@ The first row gives the probabilities of transitioning from node A to another no
 The second row gives those probabilities for node E, again in the same order.
 This is actually a very special type of matrix called a [right stochastic matrix](https://en.wikipedia.org/wiki/Stochastic_matrix) with some neat properties.
 
+NB: This is not necessarily the most common matrix representation for the graph.
+I chose to represent the incoming edges for a node along each row and the outgoing down each column.
+Representing it the opposite way is also perfectly valid and perhaps more common, but the only difference is that the matrix is transposed.
+I chose this representation because I prefer to multiply using column vectors, which will come up some time later.
+
 # Centrality
 In graph theory, a question that comes up somewhat regularly is "what is the most important node in my graph?"
 Measures of graph *[centrality](https://en.wikipedia.org/wiki/Centrality)* provide an answer to this question, but the answer is not necessarily unique. On this issue of nonuniqueness, wikipedia says:
 
 >The word "importance" has a wide number of meanings, leading to many different definitions of centrality. Two categorization schemes have been proposed. "Importance" can be conceived in relation to a type of flow or transfer across the network. This allows centralities to be classified by the type of flow they consider important. "Importance" can alternately be conceived as involvement in the cohesiveness of the network. This allows centralities to be classified based on how they measure cohesiveness. Both of these approaches divide centralities in distinct categories. A further conclusion is that a centrality which is appropriate for one category will often "get it wrong" when applied to a different category.
 
-We are going to explore different measures of centrality applied to the graph given by Capital Bikeshare usage.
+So centrality can give us a way of determining which nodes in a graph are most important, but there are many different ways of ranking centrality!
+So which one should we use?
+Let's explore different measures of centrality applied to the graph given by Capital Bikeshare usage to see if we can figure it out.
 
 ## Degree centrality
 Degree centrality is perhaps the simplest method of determining the importance of a vertex.
@@ -103,7 +112,10 @@ max_in  = grouped.sum(axis=1).argmax()
 Computing this we learn that Columbus Circle / Union Station has both the maximum in degree and out degree at 13120 and 13879.
 This means that in the first quarter of 2016 over 26000 bikes went through that station. Incredible!
 The corresponding degrees for the Lincoln Memorial station are 9419 and 9388.
-So even though we see that incredibly large link coming from the Lincoln Memorial it's not the most important station, at least by this metric.
+So even though we see that incredibly strong link coming from the Lincoln Memorial it's not the most important station, at least by this metric.
+This should make some sense since there are several relatively large links surrounding Columbus Circle / Union Station, but only one large one coming from the Lincoln Memorial.
+
+Let's look at another way of measuring centrality.
 
 ## Eigenvector centrality
 Eigenvector centrality uses the principal eigenvector of the graph to assign a measure of centrality.
@@ -140,6 +152,8 @@ However, the eigenvalue centrality still indicates that Jefferson Dr & 14th St S
 The eigenvalue centrality is unaffected by strongly connected nodes that are weakly connected to the rest of the graph.
 
 ### What is an eigenvector anyway? And how do we compute it?
+
+A casual reader may skip this section if he or she is uninterested in the mathemetics.
 
 Given a square matrix (or linear operator) $G$, a vector $v\ne0$ is an eigenvector of $G$ if and only if there exists a $\lambda$ such that $Gv = \lambda v$.
 Notice that if $v$ is an eigenvector, then so too is any scalar multiple $av$, so we can assume for the rest of this discussion that our eigenvectors are scaled so that $\sum_{i=1}^n v_i = 1$, without loss of generality.
@@ -261,7 +275,11 @@ This algorithm ranks web pages, represented as a graph of hyperlinks, by means o
 There's a good, gentle introduction to PageRank [here](https://jeremykun.com/2011/06/12/googles-pagerank-introduction/), a good article on it from the AMS [here](http://www.ams.org/samplings/feature-column/fcarc-pagerank), and a good blog post with some mathematical rigor practical considerations [here](http://blog.kleinproject.org/?p=280).
 
 
-PageRank is very, very similar to eigenvalue centrality, with a few key adjustemnts made.
+PageRank is very similar to eigenvalue centrality, with a few key adjustemnts made.
+There's some more math incoming, but only a little linear algebra is needed to understand it.
+If you wish to skip it, just know that PageRank adjusts the matrix so that a most central node always exists and is always unqiue.
+
+### Mathematical diversion
 First we take $G$ and ensure that it is column stochastic by normalizing each column by the sum of its entries.
 Specifically, let $B$ be a matrix, the same size as $G$ whose entries are all $1/n$, where $n$ is the size of $G$.
 Note that $B$ is both column and row stochastic.
@@ -292,6 +310,7 @@ The stochasticity property ensures that the principal eigenvalue is 1.
 All of these changes seem reasonable and all of these properties are nice, but what's the point?
 It seemed like eigenvector centrality was doing just fine, right?
 
+### Back on track
 On the issue of graph completeness and what could happen if this property is not satisfied, Sergey and Brin in their [original PageRank paper (pdf)](http://ilpubs.stanford.edu:8090/422/1/1999-66.pdf) offer:
 >Consider two web pages that point to each other but to no other page.
 >And suppose there is some web page which points to one of them.
@@ -306,16 +325,20 @@ Surely if Google uses this algorithm it must be the best, right?
 It does work incredibly well for link networks, but does that make it the correct choice for other types of networks?
 PageRank emphasizes incoming links more than outgoing while in a bikeshare network it would seem that both of these should be important.
 
-NB: What we did here was not strictly PageRank since PageRank uses *un*weighted graphs to begin with. 
+Caution: What we did here was not strictly PageRank since PageRank uses *un*weighted graphs to begin with. 
 [Another paper from a few years later (pdf)](http://digital.library.unt.edu/ark:/67531/metadc30962/m2/1/high_res_d/Mihalcea-2004-TextRank-Bringing_Order_into_Texts.pdf) creates a new algorithm called TextRank which uses weighted graphs, but is exactly the same thing.
 In writing this post I created that algorithm by accident.
 
 ### HITS
 
-HITS is an algorithm that predates PageRank and is pretty similar to eigenvalue centrality.
-However, HITS computes the left and right singular vectors of the graph, as opposed to the eigenvectors.
-It does not include the normalization and irreducibility adjustments that page rank has, but a matrix always has a singular value decomposition though uniqueness is not guaranteed unless all the singular values are distinct.
+HITS is an algorithm that predates PageRank and is pretty similar to eigenvalue centrality as well.
+Instead of just looking at the graph we've been using which is directed, HITS turns it into an undirected graph emphasizing incoming or outgoing edges, alternately.
+
+To do this (more linear algebra) HITS computes the left and right singular vectors of the graph, as opposed to the eigenvectors.
+It does not include the normalization and irreducibility adjustments that PageRank has, but a matrix always has a singular value decomposition though uniqueness is not guaranteed unless all the singular values are distinct.
+I'm curious what similar adjustments could do for HITS, but that will have to be left for a different time.
 Because we get two vectors (the left and right singular vectors) from the HITS algorithm, we get two different answers for centrality.
+
 The left singular vectors are called the "hubs" of the graph and the right singular vectors are the "authorities."
 The hubs are nodes in the graph that link to a lot of other nodes; they are important outlinking nodes.
 The authorities are the opposite, many other nodes point to them, referring to them as one might expect many people to refer to an authority.
