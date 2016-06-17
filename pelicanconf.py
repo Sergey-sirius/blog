@@ -3,7 +3,7 @@
 from __future__ import unicode_literals
 
 AUTHOR = 'Keith Kelly'
-SITENAME = 'kwkelly'
+SITENAME = 'Keith Kelly'
 SITEURL = ''
 
 PATH = 'content'
@@ -20,17 +20,21 @@ AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
 # Blogroll
-LINKS = (('Pelican', 'http://getpelican.com/'),
-         ('Python.org', 'http://python.org/'),
-         ('Magnific Popup', 'http://dimsemenov.com/plugins/magnific-popup/'),
-         ('Linode', 'https://www.linode.com/'),
-         ('CloudFlare', 'https://www.cloudflare.com/'),
-         ('Jinja2', 'http://jinja.pocoo.org/'))
+LINKS = (
+    ('Pelican', 'http://getpelican.com/'),
+    ('Python.org', 'http://python.org/'),
+    ('Magnific Popup', 'http://dimsemenov.com/plugins/magnific-popup/'),
+    ('Linode', 'https://www.linode.com/'),
+    ('CloudFlare', 'https://www.cloudflare.com/'),
+    ('Jinja2', 'http://jinja.pocoo.org/')
+)
 
 # Social widget
-SOCIAL = (('github', 'http://github.com/kwkelly'),
-        ('twitter', 'http://twitter.com/keithkelly'),
-        ('linkedin', 'https://www.linkedin.com/in/keith-kelly-b705379'),)
+SOCIAL = (
+    ('github', 'http://github.com/kwkelly'),
+    ('twitter', 'http://twitter.com/keithkelly'),
+    ('linkedin', 'https://www.linkedin.com/in/keith-kelly-b705379'),
+)
 
 DEFAULT_PAGINATION = 10
 
@@ -38,24 +42,36 @@ THEME = "../pelican-themes/pelican-bootstrap3/"
 BOOTSTRAP_THEME = "flatly"
 
 READERS = {'html': None}
-STATIC_PATHS = ['images', 'extra/robots.txt', 'thumbs', 'extra/favicons', 'embed_html']
+STATIC_PATHS = [
+    'images', 'extra/robots.txt',
+    'thumbs', 'extra/favicons', 'embed_html'
+]
 EXTRA_PATH_METADATA = {
-        'extra/robots.txt': {'path': 'robots.txt'},
-        }
+    'extra/robots.txt': {'path': 'robots.txt'},
+}
 
+MATH_JAX = {
+    'color': 'black', 'align': 'center', 'responsive': True,
+    'responsive_break': True
+}
 PLUGIN_PATHS = ['../pelican-plugins/']
-PLUGINS = ['photos', 'liquid_tags.img', 'liquid_tags.video',
-           'liquid_tags.youtube', 'liquid_tags.vimeo',
-           'liquid_tags.include_code', 'liquid_tags.notebook', 'html_rst_directive']
+PLUGINS = [
+    'photos', 'liquid_tags.img', 'liquid_tags.video',
+    'liquid_tags.youtube', 'liquid_tags.vimeo',
+    'liquid_tags.include_code', 'liquid_tags.notebook',
+    'html_rst_directive', 'render_math'
+]
 NOTEBOOK_DIR = 'notebooks'
-#EXTRA_HEADER = open('_nb_header.html').read()
+# EXTRA_HEADER = open('_nb_header.html').read()
 
 DISPLAY_CATEGORIES_ON_MENU = False
 DISPLAY_PAGES_ON_MENU = False
 
 RELATIVE_URLS = True
 
-MENUITEMS = (('Blog', '/blog/'), ('About' ,'/about/'),)
+MENUITEMS = (
+    ('Blog', '/blog/'), ('About', '/about/'),
+)
 
 ARTICLE_URL = 'blog/{date:%Y}/{date:%b}/{date:%d}/{slug}/'
 ARTICLE_SAVE_AS = 'blog/{date:%Y}/{date:%b}/{date:%d}/{slug}/index.html'
