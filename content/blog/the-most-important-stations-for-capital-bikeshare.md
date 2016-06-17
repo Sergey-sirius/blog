@@ -3,7 +3,7 @@ Date: 2016-6-15 16:18
 Tags: math, data, analysis, DC, pagerank, eig
 Category:
 Slug: the-most-important-stations-for-capital-bikeshare
-Summary:
+Summary: Which bike stations are the most important for Capital Bikeshare? What makes a station important and how does this all relate to grpah theory?
 Status: published
 Authors: Keith Kelly
 
