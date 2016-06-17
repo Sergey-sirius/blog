@@ -221,7 +221,7 @@ print("v: {}".format(v))
 # loop through multiplying each time
 for i in range(10):
     v = (G*v)/sum(G*v)
-		    print("v: {}".format(v))
+		print("v: {}".format(v))
 ```
 
 ```
