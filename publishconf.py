@@ -12,7 +12,7 @@ from pelicanconf import *
 
 # relative vs absolute url
 # https://github.com/getpelican/pelican/issues/1532
-SITEURL = 'https://kwkelly.com/'
+SITEURL = 'https://kwkelly.com'
 RELATIVE_URLS = False
 
 FEED_ALL_ATOM = 'feeds/all.atom.xml'
