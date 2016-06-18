@@ -13,4 +13,41 @@ You can view this notebook on `github <https://github.com/kwkelly/notebooks/blob
 For the best viewing experience, you can view the notebook as its own page `here <../../../../../embed_html/capital_bikeshare.html>`_.
 
 .. raw:: html
+
+    <style>
+    pre {
+    overflow: auto !important;
+    white-space: pre !important;
+    word-wrap: normal !important;
+    }
+    .dataframe {
+    max-width: 100% !important;
+    white-space: nowrap !important;
+    overflow: auto !important;
+    }
+    table {
+    max-width: 100% !important;
+    white-space: nowrap !important;
+    overflow: auto !important;
+    }
+    .output_wrapper {
+    white-space: nowrap !important;
+    overflow: auto !important;
+    }
+    .input_prompt {
+    display: none !important;
+    }
+    .container-fluid {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    }
+    </style>
+	  <div class="container-fluid">
+
+.. raw:: html
   :file: ../embed_html/capital_bikeshare_basic.html
+
+.. raw:: html
+
+    </div>
+

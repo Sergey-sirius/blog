@@ -18,12 +18,15 @@ This depends, of course, upon exactly what is meant by "most important."
 
 # Networks
 Look again at that map from the previous post.
-
-<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 thumb">
+<div class="container-fluid">
+<div class="row">
+<div class="col-md-6 thumb">
 <a href="../../../../../images/networks/whole_map.png" ><img class="img-responsive center-block" src="../../../../../images/networks/whole_mapt.png"></img></a>
 </div>
-<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 thumb">
+<div class="col-md-6 thumb">
 <a href="../../../../../images/networks/zoom.png" ><img class="img-responsive center-block" src="../../../../../images/networks/zoomt.png"></img></a>
+</div>
+</div>
 </div>
 
 This sort of structure is known as a *[graph](https://en.wikipedia.org/wiki/Graph_%28discrete_mathematics%29)*
@@ -42,7 +45,9 @@ In this blog post I am going to attempt to determine the nodes (stations) of the
 ## Example
 Here is an example of a simple graph which represents a two state Markov chain that I took from wikipedia:
 
+<div class="container-fluid">
 <a href="../../../../../images/networks/markov.png" ><img class="img-responsive center-block" src="../../../../../images/networks/markovt.png"></img></a>
+</div>
 
 There are two nodes and four edges.
 The direction of the edge is given as an arrow and the weight of that edge is given by the number next to it.
@@ -51,12 +56,19 @@ We can also represent this graph by a matrix.
 .MathJax_Display {
 text-align: center!important;
 }
+pre {
+overflow: auto !important;
+white-space: pre !important;
+word-wrap: normal !important;
+}
 </style>
+<div class="container-fluid">
 <div class="img-responsive center-block">
 $$G=\begin{bmatrix}
 0.3 & 0.4\\
 0.7 & 0.6
 \end{bmatrix}$$
+</div>
 </div>
 
 The first row gives the probabilities of transitioning from node A to another node -- in this case either itself or node E, respctively.
@@ -160,7 +172,9 @@ Notice that if $v$ is an eigenvector, then so too is any scalar multiple $av$, s
 So why is the principal eigenvector of a graph a good measure of the centrality?
 
 Consider the following example:
-<div class="col-xs-12 thumb">
+<div class="container-fluid">
+<div class="row">
+<div class="col-md-12 thumb">
 <a href="../../../../../images/networks/graph_start.png" ><img class="img-responsive center-block" src="../../../../../images/networks/graph_startt.png"></img></a>
 </div>
 <div class="col-xs-12 thumb">
@@ -170,13 +184,17 @@ $$G=\begin{bmatrix}
 4 & 1 & 0
 \end{bmatrix}$$
 </div>
+</div>
+</div>
 
 We have a weighted digraph (directed graph) with some self loops.
 We are going to do a random walk on this graph, starting with each node being equiprobable.
 So at each node we assign a probability of $1/3$.
 
-<div class="col-xs-12 thumb">
+<div class="container-fluid">
+<div class="col-md-12 thumb">
 <a href="../../../../../images/networks/graph_1.png" ><img class="img-responsive center-block" src="../../../../../images/networks/graph_1t.png"></img></a>
+</div>
 </div>
 
 Now, we move from node to node, multiplying the probability at each node by the wight to an adjacent node.
@@ -190,14 +208,18 @@ And finally for C we get A to C gives us $1/3 \times 4 = 4/3$, B to C $1/3 \time
 Sum the values going into each node and we get A=$9/3$, B=$7/3$, C=$5/3$
 Normalize (i.e. ensure everything still sums to 1) and we get A=$9/21$, B=$7/21$, C=$5/21$.
 
-<div class="col-xs-12 thumb">
+<div class="container-fluid">
+<div class="col-md-12 thumb">
 <a href="../../../../../images/networks/graph_2.png" ><img class="img-responsive center-block" src="../../../../../images/networks/graph_2t.png"></img></a>
+</div>
 </div>
 
 We can iterate this process until the probabilities associated to each node cease to move appreciably.
 
-<div class="col-xs-12 thumb">
+<div class="container-fluid">
+<div class="col-md-12 thumb">
 <a href="../../../../../images/networks/graph_3.png" ><img class="img-responsive center-block" src="../../../../../images/networks/graph_3t.png"></img></a>
+</div>
 </div>
 
 Putting the probabilities through the network again, really doesn't change it.
@@ -289,6 +311,7 @@ $$C = pB + (1-p)G.$$
 Finally, we just compute the principal eigenvector of this new matrix, just like we did before.
 
 That's it. Pretty simple, huh?
+
 ```python
 def page_rank(A, p=0.15, num=1):
     """Compute the page rank of a given graph A and return the num largest values"""
@@ -363,7 +386,8 @@ This shouldn't be too surprising since there are very strong links to this nodes
 
 Here is a table that shows the top 6 most important Capital Bikshare docks for each of the centrality measures considered here.
 
-<table class="tg table table-bordered table-striped table-condensed table-hover table-responsive">
+<div class="container-fluid" style="overflow: auto">
+<table class="table table-bordered table-striped table-condensed table-hover table-responsive">
 <tr>
 <th style="border-right: 1px solid #000; border-bottom: 1px solid #000"></th>
 <th style="border-bottom: 1px solid #000">Algorithms</th>
@@ -437,6 +461,7 @@ Here is a table that shows the top 6 most important Capital Bikshare docks for e
 <td>14th &amp; V St NW</td>
 </tr>
 </table>
+</div>
 
 Looking at this we can see that for the graph considered here, the various different measures do not produce super different results.
 Regardless of the centrality measure that we used, the top several most important nodes in the graph appear over and over again.
@@ -444,13 +469,15 @@ I don't mean to imply that it doesn't matter which one you use, just that for so
 The Wikipedia page on [graph centrality](https://en.wikipedia.org/wiki/Centrality) has the following figure showing how the most central nodes can be very different depending on the measure chosen for a particular example graph.
 
 
-<div class="col-xs-12 thumb">
+<div class="container-fluid">
+<div class="col-md-12 thumb">
 <figure>
 <a href="https://upload.wikimedia.org/wikipedia/commons/1/11/6_centrality_measures.png" ><img class="img-responsive center-block" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/6_centrality_measures.png/400px-6_centrality_measures.png"></img></a>
 <figcaption>
 Examples of A) Betweenness centrality, B) Closeness centrality, C) Eigenvector centrality, D) Degree centrality, E) Harmonic centrality and F) Katz centrality of the same graph.
 </figcaption>
 </figure>
+</div>
 </div>
 
 Clearly these are all different, so which is the best method for ranking nodes in a bikeshare network?
