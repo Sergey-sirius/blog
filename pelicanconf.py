@@ -67,7 +67,9 @@ NOTEBOOK_DIR = 'notebooks'
 DISPLAY_CATEGORIES_ON_MENU = False
 DISPLAY_PAGES_ON_MENU = False
 
-RELATIVE_URLS = True
+# Relative vs absolute URLs and https
+# https://github.com/getpelican/pelican/issues/1532
+RELATIVE_URLS = False
 
 MENUITEMS = (
     ('Blog', '/blog/'), ('About', '/about/'),
@@ -88,3 +90,4 @@ PHOTO_GALLERY = (4096, 4096, 80)
 PHOTO_ARTICLE = (768, 768, 80)
 PHOTO_THUMB = (512, 512, 60)
 #HIDE_SIDEBAR=True
+# DISQUS_SITENAME = "kwkelly"
