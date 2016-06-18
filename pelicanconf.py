@@ -3,7 +3,7 @@
 from __future__ import unicode_literals
 
 AUTHOR = 'Keith Kelly'
-SITENAME = 'Keith Kelly'
+SITENAME = 'kwkelly'
 SITEURL = ''
 
 PATH = 'content'
@@ -44,7 +44,8 @@ BOOTSTRAP_THEME = "flatly"
 READERS = {'html': None}
 STATIC_PATHS = [
     'images', 'extra/robots.txt',
-    'thumbs', 'extra/favicons', 'embed_html'
+    'thumbs', 'extra/favicons', 'embed_html',
+    'extra'
 ]
 EXTRA_PATH_METADATA = {
     'extra/robots.txt': {'path': 'robots.txt'},
@@ -91,3 +92,5 @@ PHOTO_ARTICLE = (768, 768, 80)
 PHOTO_THUMB = (512, 512, 60)
 #HIDE_SIDEBAR=True
 # DISQUS_SITENAME = "kwkelly"
+HTMLLOGO = '<span style="color:#7c7c7c">kw</span>kelly'
+HIDE_SITENAME = True
