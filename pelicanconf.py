@@ -73,7 +73,7 @@ DISPLAY_PAGES_ON_MENU = False
 RELATIVE_URLS = False
 
 MENUITEMS = (
-    ('Blog', '/blog/'), ('About', '/about/'),
+    ('blog', '/blog/'), ('about', '/about/'),
 )
 
 ARTICLE_URL = 'blog/{date:%Y}/{date:%b}/{date:%d}/{slug}/'
@@ -92,5 +92,5 @@ PHOTO_ARTICLE = (768, 768, 80)
 PHOTO_THUMB = (512, 512, 60)
 #HIDE_SIDEBAR=True
 # DISQUS_SITENAME = "kwkelly"
-HTMLLOGO = '<span style="color:#7c7c7c">kw</span>kelly'
+HTMLLOGO = '<span style="color:#adacac">kw</span>kelly'
 HIDE_SITENAME = True
