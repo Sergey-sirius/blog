@@ -14,10 +14,11 @@ This is the personal webpage of Keith Kelly. It is mostly empty for now.
 
 
 
-This website is powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+This website is powered by
+<a href="https://www.python.org/" target="_blank">Python</a>,
 <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
 <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>,
-<a href="https://www.python.org/" target="_blank">Python</a>,
+<a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
 <a href="http://dimsemenov.com/plugins/magnific-popup/" target="_blank">Magnific-Popup</a>,
 <a href="https://www.linode.com/" target="_blank">Linode</a>,
 <a href="https://www.cloudflare.com/" target="_blank">CloudFlare</a>, and

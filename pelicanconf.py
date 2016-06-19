@@ -20,14 +20,14 @@ AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
 # Blogroll
-LINKS = (
-    ('Pelican', 'http://getpelican.com/'),
-    ('Python.org', 'http://python.org/'),
-    ('Magnific Popup', 'http://dimsemenov.com/plugins/magnific-popup/'),
-    ('Linode', 'https://www.linode.com/'),
-    ('CloudFlare', 'https://www.cloudflare.com/'),
-    ('Jinja2', 'http://jinja.pocoo.org/')
-)
+# LINKS = (
+#     ('Pelican', 'http://getpelican.com/'),
+#     ('Python.org', 'http://python.org/'),
+#     ('Magnific Popup', 'http://dimsemenov.com/plugins/magnific-popup/'),
+#     ('Linode', 'https://www.linode.com/'),
+#     ('CloudFlare', 'https://www.cloudflare.com/'),
+#     ('Jinja2', 'http://jinja.pocoo.org/')
+# )
 
 # Social widget
 SOCIAL = (
