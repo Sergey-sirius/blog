@@ -76,11 +76,15 @@ MENUITEMS = (
     ('blog', '/blog/'), ('about', '/about/'),
 )
 
+INDEX = 'index.html'
 ARTICLE_URL = 'blog/{date:%Y}/{date:%b}/{date:%d}/{slug}/'
-ARTICLE_SAVE_AS = 'blog/{date:%Y}/{date:%b}/{date:%d}/{slug}/index.html'
-
+ARTICLE_SAVE_AS = ARTICLE_URL + INDEX
 PAGE_URL = '{slug}/'
-PAGE_SAVE_AS = '{slug}/index.html'
+PAGE_SAVE_AS = PAGE_URL + INDEX
+TAG_URL = 'blog/tag/{slug}/'
+TAG_SAVE_AS = TAG_URL + INDEX
+CATEGORY_URL = 'blog/{slug}/'
+CATEGORY_SAVE_AS = CATEGORY_URL + INDEX
 
 INDEX_SAVE_AS = '/blog/index.html'
 

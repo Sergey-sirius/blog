@@ -3,7 +3,7 @@ Adding galleries to pelican and bootstrap
 
 :date: 2016-5-23 23:13
 :tags: pelican, photos, meta
-:category:
+:category: general
 :slug: adding-galleries-to-pelican-and-bootstrap
 :status: published
 :authors: Keith Kelly

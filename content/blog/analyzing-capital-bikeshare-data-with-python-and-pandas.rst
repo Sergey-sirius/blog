@@ -3,7 +3,7 @@ Analyzing Capital Bikeshare data with python and pandas
 
 :date: 2016-6-15 11:14
 :tags: data, analysis, DC, statistics
-:category:
+:category: general
 :slug: analyzing-capital-bikeshare-data-with-python-and-pandas
 :summary: I stumbled across Jake VanderPlas's blog post Analyzing Pronto CycleShare Data with Python and Pandas and thought it could be interesting to do something similar for the data from Washington DC's Capital Bikeshare.
 :status: published

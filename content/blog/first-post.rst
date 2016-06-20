@@ -3,7 +3,7 @@ First Post
 
 :date: 2016-5-15 13:55
 :tags: first, post
-:category:
+:category: personal
 :slug: first-post
 :status: published
 :authors: Keith Kelly
