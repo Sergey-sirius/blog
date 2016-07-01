@@ -73,7 +73,7 @@ $$G=\begin{bmatrix}
 
 The first row gives the probabilities of transitioning from node A to another node -- in this case either itself or node E, respctively.
 The second row gives those probabilities for node E, again in the same order.
-This is actually a very special type of matrix called a [right stochastic matrix](https://en.wikipedia.org/wiki/Stochastic_matrix) with some neat properties.
+This is actually a very special type of matrix called a [left stochastic matrix](https://en.wikipedia.org/wiki/Stochastic_matrix) with some neat properties.
 
 NB: This is not necessarily the most common matrix representation for the graph.
 I chose to represent the incoming edges for a node along each row and the outgoing down each column.

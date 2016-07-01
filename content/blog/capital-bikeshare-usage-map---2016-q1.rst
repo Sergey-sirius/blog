@@ -2,7 +2,7 @@ Capital Bikeshare Usage Map - 2016 Q1
 #####################################
 
 :date: 2016-6-15 11:21
-:tags: map, data, opendata, analysis
+:tags: map, data, opendata, analysis, DC
 :category: general
 :slug: capital-bikeshare-usage-map---2016-q1
 :summary: This map shows the relative number of trips between pairs of stations for Capital Bikeshare, the Washington, DC bikeshare program.

@@ -21,5 +21,6 @@ This website is powered by
 <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
 <a href="http://dimsemenov.com/plugins/magnific-popup/" target="_blank">Magnific-Popup</a>,
 <a href="https://www.linode.com/" target="_blank">Linode</a>,
+<a href="https://letsencrypt.org/" target="_blank">Let's Encrypt</a>,
 <a href="https://www.cloudflare.com/" target="_blank">CloudFlare</a>, and
 <a href="http://jinja.pocoo.org/" target="_blank">Jinja2</a>

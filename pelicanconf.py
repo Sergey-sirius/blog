@@ -49,7 +49,9 @@ STATIC_PATHS = [
 ]
 EXTRA_PATH_METADATA = {
     'extra/robots.txt': {'path': 'robots.txt'},
+    'extra/custom.css': {'path': 'css/custom.css'}
 }
+CUSTOM_CSS = 'css/custom.css'
 
 MATH_JAX = {
     'color': 'black', 'align': 'center', 'responsive': True,
