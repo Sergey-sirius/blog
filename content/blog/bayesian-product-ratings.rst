@@ -10,6 +10,7 @@ Bayesian Product Ratings
 :authors: Keith Kelly
 
 This is a post, in the form of a Jupyter notebook, about analysing ratings data using Bayesian inference to generate more accurate estimates of the paramaters.
+You can view the notebook `here on github <https://github.com/kwkelly/notebooks/blob/master/multinomial/bayesian_data_analysis.ipynb>`_ or `here as its own page </embed_html/bayesian_rating_full.html>`_. 
 
 
 .. raw:: html
@@ -48,7 +49,7 @@ This is a post, in the form of a Jupyter notebook, about analysing ratings data 
 	  <div class="container-fluid">
 
 .. raw:: html
-  :file: ../embed_html/bayesian_rating.html
+  :file: ../embed_html/bayesian_rating_basic.html
 
 .. raw:: html
 
