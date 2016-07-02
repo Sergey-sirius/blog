@@ -5,7 +5,7 @@ Bayesian Product Ratings
 :tags: Bayes, Bayesian, Statistics, Math, Ratings, Data, Analysis
 :category: general
 :slug: bayesian-product-ratings
-:summary: This is a post, in the form of a Jupyter notebook, about analysing ratings data using Bayesian inference to generate more accurate estimates of the paramaters.
+:summary: This is a post, in the form of a Jupyter notebook, about analyzing ratings data using Bayesian inference to generate more accurate estimates of the paramaters.
 :status: published
 :authors: Keith Kelly
 
@@ -49,7 +49,7 @@ You can view the notebook `here on github <https://github.com/kwkelly/notebooks/
 	  <div class="container-fluid">
 
 .. raw:: html
-  :file: ../embed_html/bayesian_rating_basic.html
+  :file: ../embed_html/bayesian_ratings_basic.html
 
 .. raw:: html
 
