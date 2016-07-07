@@ -97,6 +97,6 @@ PHOTO_GALLERY = (4096, 4096, 80)
 PHOTO_ARTICLE = (768, 768, 80)
 PHOTO_THUMB = (512, 512, 60)
 #HIDE_SIDEBAR=True
-# DISQUS_SITENAME = "kwkelly"
+DISQUS_SITENAME = "kwkelly"
 HTMLLOGO = '<span style="color:#adacac">kw</span>kelly'
 HIDE_SITENAME = True

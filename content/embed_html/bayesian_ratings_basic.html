@@ -5,7 +5,13 @@
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Analyzing-ratings-data-in-a-Bayesian-Framework">Analyzing ratings data in a Bayesian Framework<a class="anchor-link" href="#Analyzing-ratings-data-in-a-Bayesian-Framework">&#182;</a></h1><p>The Problem: Suppose you go to Amazon in search of a book on Bayesian statistics and enter "Bayesian statistics" as your search query. You obviously want the best book, so you go and sort by average rating. The result is a bunch of books with relatively few ratings, all of which are very high.</p>
-<p><img src="/embed_html/search_results.png" alt=""></p>
+<p>
+<div class="row">
+<div class="col-md-12">
+<img src="/embed_html/search_results.png" alt="">
+</div>
+</div>
+</p>
 <p>Now I'm sure that these are all great books, but the issue is that there aren't enough ratings to give a good estimate of what the <em>true</em> average rating is for each of these books.</p>
 <p>The fix: We can use Bayesian data analysis to incorporate the lack of information and uncertainty into our estimate of the true mean.</p>
 <p>The inspiration: I saw Erik Bernhardsson's post <a href="https://erikbern.com/2015/12/05/more-mcmc-analyzing-a-small-dataset-with-1-5-ratings/"><em>Analyzing a small dataset with 1-5 ratings</em></a> and thought I would expand on it and show another example.
