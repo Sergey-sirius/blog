@@ -22,7 +22,7 @@ TEMPLATE = """
 def make_entry(title):
     today = datetime.today()
     slug = title.lower().strip().replace(' ', '-')
-    f_create = "content/blog/{}.rst".format(slug)
+    f_create = "content/blog/{}/post.rst".format(slug)
     t = TEMPLATE.strip().format(title=title,
                                 hashes='#' * len(title),
                                 year=today.year,
