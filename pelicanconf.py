@@ -45,7 +45,7 @@ READERS = {'html': None}
 STATIC_PATHS = [
     'images', 'extra/robots.txt',
     'thumbs', 'extra/favicons', 'embed_html',
-    'extra'
+    'extra', 'blog'
 ]
 EXTRA_PATH_METADATA = {
     'extra/robots.txt': {'path': 'robots.txt'},
