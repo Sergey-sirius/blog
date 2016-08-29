@@ -15,6 +15,7 @@ Authors: Keith Kelly
 (
 *Update 8/28/16 11pm*: the plots and code have been updated after reddit user /u/Grimace06 caught an oversight.
 I had neglected to account for train directionality in computing headways and wait times.
+*Update 8/29/16 4pm*: Fix concerning blue line pointed out by reddit user /u/KevinMCombes.
 )
 
 For those unfamiliar, Metro is how the Washington Metropolitan Area Transit Authority ([WMATA](https://beta.wmata.com/)) is commonly referred to.
