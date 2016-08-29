@@ -311,7 +311,7 @@ At this scale, most of the lines look pretty similar in terms of their wait time
 <div class="container-fluid">
 <div class="row">
 <div class="col-md-12 thumb">
-<a href="{filename}images/wait_times_15max.png" ><img class="img-responsive center-block" src="{filename}images/wait_times_15max.png"></img></a>
+<a href="{filename}images/wait_times_max15.png" ><img class="img-responsive center-block" src="{filename}images/wait_times_max15.png"></img></a>
 
 From these plots we can gather the the red and the green lines have the worst waiting times in general, but with means around only 2 minutes.
 That's not so bad at all! Good job WMATA.
