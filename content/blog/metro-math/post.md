@@ -264,7 +264,27 @@ Now it looks like something like this.
 The first thing I wanted to do was to be able to graphically display the trip information, because that was information that I know had.
 After looking at a few different ones, I settled on the red line on August 9th.
 
-[![red_line trips plot]({filename}images/RD_2016-08-09.png)]({filename}images/RD_2016-08-09.png)
+<button type="button" class="btn btn-primary btn-sm string-button" src="{filename}images/BL_2016-08-09.png" onclick="changeStr(this);">BL</button>
+<button type="button" class="btn btn-primary btn-sm string-button" src="{filename}images/GR_2016-08-09.png" onclick="changeStr(this);">GR</button>
+<button type="button" class="btn btn-primary btn-sm string-button" src="{filename}images/RD_2016-08-09.png" onclick="changeStr(this);">RD</button>
+<button type="button" class="btn btn-primary btn-sm string-button" src="{filename}images/OR_2016-08-09.png" onclick="changeStr(this);">OR</button>
+<button type="button" class="btn btn-primary btn-sm string-button" src="{filename}images/YL_2016-08-09.png" onclick="changeStr(this);">YL</button>
+<button type="button" class="btn btn-primary btn-sm string-button" src="{filename}images/SV_2016-08-09.png" onclick="changeStr(this);">SV</button>
+<div class="container-fluid">
+<div class="row">
+<div class="col-md-12 thumb">
+<a id="string-link" href="{filename}images/RD_2016-08-09.png" ><img id="string-plot" class="img-responsive center-block" src="{filename}images/RD_2016-08-09.png"></img></a>
+</div>
+</div>
+</div>
+
+<script type="text/javascript">
+function changeStr(element){
+var link = element.getAttribute("src");
+document.getElementById("string-link").href = link
+document.getElementById("string-plot").src = link
+}
+</script>
 
 As you can see, the red line between Shady Grove and Twin Brook was kind of fucked that day.
 You'll also note the lower density of the lines in the middle of the day.
@@ -281,15 +301,43 @@ We can also, like Erik, plot the distribution of headways and the distribution o
 
 <div class="container-fluid">
 <div class="row">
+<button type="button" class="btn btn-primary btn-sm string-button" src="{filename}images/BL_headways.png" onclick="changeHead(this);">BL</button>
+<button type="button" class="btn btn-primary btn-sm string-button" src="{filename}images/GR_headways.png" onclick="changeHead(this);">GR</button>
+<button type="button" class="btn btn-primary btn-sm string-button" src="{filename}images/RD_headways.png" onclick="changeHead(this);">RD</button>
+<button type="button" class="btn btn-primary btn-sm string-button" src="{filename}images/OR_headways.png" onclick="changeHead(this);">OR</button>
+<button type="button" class="btn btn-primary btn-sm string-button" src="{filename}images/YL_headways.png" onclick="changeHead(this);">YL</button>
+<button type="button" class="btn btn-primary btn-sm string-button" src="{filename}images/SV_headways.png" onclick="changeHead(this);">SV</button>
 <div class="col-md-12 thumb">
-<a href="{filename}images/BL_headways.png" ><img class="img-responsive center-block" src="{filename}images/BL_headways.png"></img></a>
+<a id="head-link" href="{filename}images/BL_headways.png" ><img id="head-plot" class="img-responsive center-block" src="{filename}images/BL_headways.png"></img></a>
 
 </div>
+<button type="button" class="btn btn-primary btn-sm string-button" src="{filename}images/BL_wait_times.png" onclick="changeWait(this);">BL</button>
+<button type="button" class="btn btn-primary btn-sm string-button" src="{filename}images/GR_wait_times.png" onclick="changeWait(this);">GR</button>
+<button type="button" class="btn btn-primary btn-sm string-button" src="{filename}images/RD_wait_times.png" onclick="changeWait(this);">RD</button>
+<button type="button" class="btn btn-primary btn-sm string-button" src="{filename}images/OR_wait_times.png" onclick="changeWait(this);">OR</button>
+<button type="button" class="btn btn-primary btn-sm string-button" src="{filename}images/YL_wait_times.png" onclick="changeWait(this);">YL</button>
+<button type="button" class="btn btn-primary btn-sm string-button" src="{filename}images/SV_wait_times.png" onclick="changeWait(this);">SV</button>
 <div class="col-md-12 thumb">
-<a href="{filename}images/BL_wait_times.png" ><img class="img-responsive center-block" src="{filename}images/BL_wait_times.png"></img></a>
+<a id="wait-link" href="{filename}images/BL_wait_times.png" ><img id="wait-plot" class="img-responsive center-block" src="{filename}images/BL_wait_times.png"></img></a>
 </div>
 </div>
 </div>
+
+<script type="text/javascript">
+function changeHead(element){
+var head_link = element.getAttribute("src");
+document.getElementById("head-link").href = head_link
+document.getElementById("head-plot").src = head_link
+}
+</script>
+
+<script type="text/javascript">
+function changeWait(element){
+var head_link = element.getAttribute("src");
+document.getElementById("wait-link").href = head_link
+document.getElementById("wait-plot").src = head_link
+}
+</script>
 
 Here I've looked at trip times between 7am and 7pm.
 And keep in mind that in some cases there may be several lines that work for you.
@@ -327,15 +375,43 @@ The x-axes have different ranges because the trains run during different hours d
 
 <div class="container-fluid">
 <div class="row">
+<button type="button" class="btn btn-primary btn-sm string-button" src="{filename}images/BL_weekday_waiting_by_time.png" onclick="changeWT1(this);">BL</button>
+<button type="button" class="btn btn-primary btn-sm string-button" src="{filename}images/GR_weekday_waiting_by_time.png" onclick="changeWT1(this);">GR</button>
+<button type="button" class="btn btn-primary btn-sm string-button" src="{filename}images/RD_weekday_waiting_by_time.png" onclick="changeWT1(this);">RD</button>
+<button type="button" class="btn btn-primary btn-sm string-button" src="{filename}images/OR_weekday_waiting_by_time.png" onclick="changeWT1(this);">OR</button>
+<button type="button" class="btn btn-primary btn-sm string-button" src="{filename}images/YL_weekday_waiting_by_time.png" onclick="changeWT1(this);">YL</button>
+<button type="button" class="btn btn-primary btn-sm string-button" src="{filename}images/SV_weekday_waiting_by_time.png" onclick="changeWT1(this);">SV</button>
 <div class="col-md-12 thumb">
-<a href="{filename}images/RD_weekday_waiting_by_time.png" ><img class="img-responsive center-block" src="{filename}images/RD_weekday_waiting_by_time.png"></img></a>
+<a id="WT1-link" href="{filename}images/RD_weekday_waiting_by_time.png" ><img id="WT1-img" class="img-responsive center-block" src="{filename}images/RD_weekday_waiting_by_time.png"></img></a>
 
 </div>
+<button type="button" class="btn btn-primary btn-sm string-button" src="{filename}images/BL_weekend_waiting_by_time.png" onclick="changeWT2(this);">BL</button>
+<button type="button" class="btn btn-primary btn-sm string-button" src="{filename}images/GR_weekend_waiting_by_time.png" onclick="changeWT2(this);">GR</button>
+<button type="button" class="btn btn-primary btn-sm string-button" src="{filename}images/RD_weekend_waiting_by_time.png" onclick="changeWT2(this);">RD</button>
+<button type="button" class="btn btn-primary btn-sm string-button" src="{filename}images/OR_weekend_waiting_by_time.png" onclick="changeWT2(this);">OR</button>
+<button type="button" class="btn btn-primary btn-sm string-button" src="{filename}images/YL_weekend_waiting_by_time.png" onclick="changeWT2(this);">YL</button>
+<button type="button" class="btn btn-primary btn-sm string-button" src="{filename}images/SV_weekend_waiting_by_time.png" onclick="changeWT2(this);">SV</button>
 <div class="col-md-12 thumb">
-<a href="{filename}images/RD_weekend_waiting_by_time.png" ><img class="img-responsive center-block" src="{filename}images/RD_weekend_waiting_by_time.png"></img></a>
+<a id="WT2-link" href="{filename}images/RD_weekend_waiting_by_time.png" ><img id="WT2-img" class="img-responsive center-block" src="{filename}images/RD_weekend_waiting_by_time.png"></img></a>
 </div>
 </div>
 </div>
+
+<script type="text/javascript">
+function changeWT1(element){
+var head_link = element.getAttribute("src");
+document.getElementById("WT1-link").href = head_link
+document.getElementById("WT1-img").src = head_link
+}
+</script>
+
+<script type="text/javascript">
+function changeWT2(element){
+var head_link = element.getAttribute("src");
+document.getElementById("WT2-link").href = head_link
+document.getElementById("WT2-img").src = head_link
+}
+</script>
 
 I'm not sure why the wait times increase early in the morning and late at night on the red line during the weekend.
 Maybe someone more familiar with the system can account for this.
