@@ -12,6 +12,11 @@ Authors: Keith Kelly
 [//]: # (https://www.washingtonpost.com/graphics/local/metro-closures/img/WMATAa10506-promo.jpg)
 
 
+(
+*Update 8/28/16 11pm*: the plots and code have been updated after reddit user /u/Grimace06 caught an oversight.
+I had neglected to account for train directionality in computing headways and wait times.
+)
+
 For those unfamiliar, Metro is how the Washington Metropolitan Area Transit Authority ([WMATA](https://beta.wmata.com/)) is commonly referred to.
 It is the transit authority for the Washington, DC region and operates Metrorail, Metrobus, and MetroAccess, the first of which is the topic of this post.
 Back in mid-July [WMATA released a new API](http://www.wmata.com/about_metro/news/PressReleaseDetail.cfm?ReleaseID=6136) giving real-time train position information.
@@ -269,7 +274,6 @@ You might notice some lines appearing or disappearing.
 This could be a problem with my method of generating trip IDs or related to the fact that trains can go into or out of service in the middle of a line.
 
 We can also, like Erik, plot the distribution of headways and the distribution of wait times.
-Here I've looked at trip times between 7am and 7pm.
 
 [//]: # ([![blue line headway distribution]({filename}images/BL_headways.png)]({filename}images/BL_headways.png))
 [//]: # ([![blue line wait times distribution]({filename}images/BL_wait_times.png)]({filename}images/BL_wait_times.png))
@@ -287,7 +291,14 @@ Here I've looked at trip times between 7am and 7pm.
 </div>
 </div>
 
+Here I've looked at trip times between 7am and 7pm.
+And keep in mind that in some cases there may be several lines that work for you.
+This isn't accounted for here – I've assumed that you're waiting for a train on particular line in a particulr direction.
+This also ignores the fact that not all trains cover the whole line. 
+That would be relatively easy to do though by just sorting the trips by destination station.
 Again, the plots for the other lines are [here](/blog/metro-math/images/) if you're curious.
+
+
 The violin plots work better as a comparison mechanism though.
 
 <div class="container-fluid">
@@ -327,6 +338,7 @@ The x-axes have different ranges because the trains run during different hours d
 </div>
 
 I'm not sure why the wait times increase early in the morning and late at night on the red line during the weekend.
+Maybe someone more familiar with the system can account for this.
 There are, again, more images for the other lines [here.](/blog/metro-math/images/)
 
 Now we can investigate how much longer you'll have to wait given that you've already waited a certain amount of time.

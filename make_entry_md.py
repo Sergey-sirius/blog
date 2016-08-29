@@ -1,4 +1,5 @@
 import sys
+import os
 from datetime import datetime
 
 # modified from http://nafiulis.me/making-a-static-blog-with-pelican.html
@@ -28,6 +29,11 @@ def make_entry(title):
                                 hour=today.hour,
                                 minute=today.minute,
                                 slug=slug)
+    path = os.path.dirname(f_create)
+    if os.path.exists(path):
+        print("path already exists")
+        raise FileExistsError
+    os.makedirs(path)
     with open(f_create, 'w') as w:
         w.write(t)
     print("File created -> " + f_create)
